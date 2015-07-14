@@ -87,8 +87,11 @@ function submit_info()
 
 			if (pieces[3].length > 5)
 			{
-				if (pieces[3].substring(6) != "0000")
-					continue;
+				//if (pieces[3].substring(6) != "0000")
+				//{
+				//	continue;
+				//}
+				console.log("This is greater than 5 characters: ["+pieces[3]+"]");
 				pieces[3] = pieces[3].substring(0, 5);
 			}
 			console.log(pieces[3]);
