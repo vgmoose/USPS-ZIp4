@@ -58,6 +58,11 @@ function loadEntry(value)
 	document.getElementById("usps_frame").src = url;
 }
 
+function loadCurEntry()
+{
+loadEntry(cur_value);
+}
+
 function loadPrevEntry()
 {
 cur_value--;
@@ -105,7 +110,7 @@ function submit_info()
 <title>USPS Zip4 Codes</title>
 <div id="floater">
 <table><tr><td class="rtd">
-<button onclick="loadPrevEntry()">Prev</button></td><td class="midtd">
+<button onclick="loadCurEntry()">Refresh</button><button onclick="loadPrevEntry()">Prev</button></td><td class="midtd">
 <span id="company">Company Name</span></td><td class="ltd">
 <button onclick="loadNextEntry();">Next</button></td></tr></table>
 </div>
