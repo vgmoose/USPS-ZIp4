@@ -46,11 +46,11 @@ function loadEntry(value)
 	if (cur_value < 0) cur_value = 0;
 	if (cur_value >= all_data.length) cur_value = all_data.length-1;
 	var company = "";
-	var ad1 = all_data[value][2];
+	var ad1 = parse(all_data[value][2]);
 	var ad2 = "";
 	var city = "";
 	var state = "";
-	var zip = all_data[value][3];
+	var zip = parse(all_data[value][3]);
 
 	document.getElementById("company").innerHTML = all_data[value][0]+" "+all_data[value][1];
 	var url = "https://tools.usps.com/go/ZipLookupResultsAction!input.action?resultMode=1&companyName="+company+"&address1="+ad1+"&address2="+ad2+"&city="+city+"&state="+state+"&urbanCode=&postalCode=&zip="+zip
@@ -60,7 +60,7 @@ function loadEntry(value)
 
 function loadCurEntry()
 {
-	document.getElementById("usps_frame").contentWindow.location.reload(true);
+loadEntry(cur_value);
 }
 
 function loadPrevEntry()
@@ -73,6 +73,11 @@ function loadNextEntry()
 {
 cur_value++;
 loadEntry(cur_value);
+}
+
+function parse(word)
+{
+return encodeURIComponent(word);
 }
 
 function submit_info()
