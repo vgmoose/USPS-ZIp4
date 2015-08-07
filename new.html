@@ -56,7 +56,7 @@ function loadEntry(value)
 	document.getElementById("company").innerHTML = all_data[value][0]+" "+all_data[value][1];
 	var url;
 	if (proxyOn)
-		url = "http://68.112.253.233:3001/proxy?url=https://tools.usps.com/go/ZipLookupResultsAction!input.action?resultMode=1&companyName="+company+"&address1="+ad1+"&address2="+ad2+"&city="+city+"&state="+state+"&urbanCode=&postalCode=&zip="+zip
+		url = "http://68.112.253.233/proxy?url=https://tools.usps.com/go/ZipLookupResultsAction!input.action?resultMode=1&companyName="+company+"&address1="+ad1+"&address2="+ad2+"&city="+city+"&state="+state+"&urbanCode=&postalCode=&zip="+zip
 	else
 		url = "https://tools.usps.com/go/ZipLookupResultsAction!input.action?resultMode=1&companyName="+company+"&address1="+ad1+"&address2="+ad2+"&city="+city+"&state="+state+"&urbanCode=&postalCode=&zip="+zip
 	document.getElementById("usps_frame").src = url;
